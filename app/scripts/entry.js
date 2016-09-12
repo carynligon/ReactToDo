@@ -16,15 +16,17 @@ $(document).ajaxSend(function(evt, xhrAjax, jqueryAjax) {
   }
 });
 
-function login(username, password) {
-  const promise = new Promise((resolve, reject) => {
-    store.session.save({username:username, password:password});
-  });
-  return promise
-}
-
-login('caryn','1234').then(() => {
-  console.log('logged in');
-})
+// store.session.save({
+//   username: 'caryn',
+//   password: '1234'
+// }, {
+//   success: function(data) {
+//     localStorage.setItem('authtoken', data.get('authtoken'));
+//     store.session.set({
+//       username: 'caryn',
+//       password: '1234'
+//     });
+//   }
+// });
 
 ReactDOM.render(router, document.getElementById('container'));

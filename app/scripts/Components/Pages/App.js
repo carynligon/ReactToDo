@@ -1,9 +1,14 @@
 import React from 'react';
 
+import Nav from '../Nav';
+
 export default React.createClass({
   render() {
+    console.log('hi');
     return (
-      <div></div>
+      <main>
+        <Nav/>
+      </main>
     );
   }
 });
