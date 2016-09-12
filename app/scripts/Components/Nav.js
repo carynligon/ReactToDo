@@ -5,7 +5,7 @@ export default React.createClass({
   render() {
     return (
       <nav>
-        Home
+        <Link to="/">Home</Link>
         Today
         Important
         <Link to="/new-list">New</Link>

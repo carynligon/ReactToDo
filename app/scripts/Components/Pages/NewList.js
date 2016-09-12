@@ -9,18 +9,13 @@ export default React.createClass({
   createList(e) {
     e.preventDefault();
     let listName = this.refs.listName.value;
-    function createList() {
-      let promise = new Promise((resolve, reject) => {
-        store.listsCollection.newList(listName);
-        resolve();
-      });
-      return promise;
-    }
-    createList().then(() => {
-      return store.listsCollection ;
-    }).then((list) => {
-      console.log(list.models[0].id);
-      hashHistory.push(`list/${list.models[0].id}`);
+    store.listsCollection.create({
+      name: listName
+    }, {
+      success: (data) => {
+        console.log(data);
+        hashHistory.push(`/list/${data.get('_id')}`)
+      }
     })
   },
   render() {
