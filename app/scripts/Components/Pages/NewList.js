@@ -1,4 +1,5 @@
 import React from 'react';
+import {hashHistory} from 'react-router';
 
 import store from '../../store';
 
@@ -18,7 +19,8 @@ export default React.createClass({
     createList().then(() => {
       return store.listsCollection ;
     }).then((list) => {
-      console.log(list);
+      console.log(list.models[0].id);
+      hashHistory.push(`list/${list.models[0].id}`);
     })
   },
   render() {
