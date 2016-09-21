@@ -54,6 +54,12 @@ nav {
     margin: 1rem auto;
     background: #168bbd;
     border: none; }
+    .new-list-form button:hover {
+      cursor: pointer;
+      background: none;
+      color: #168bbd;
+      border: 2px solid #168bbd;
+      box-sizing: border-box; }
 
 h2 {
   text-align: center; }

@@ -49,5 +49,12 @@
     margin: 1rem auto;
     background: $main;
     border: none;
+    &:hover {
+      cursor: pointer;
+      background: none;
+      color: $main;
+      border: 2px solid $main;
+      box-sizing: border-box;
+    }
   }
 }
