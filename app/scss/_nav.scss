@@ -1,0 +1,13 @@
+nav {
+  padding: 1rem 0;
+  background: $main;
+  color: #fff;
+  a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+    &:hover {
+      color: #000;
+    }
+  }
+}

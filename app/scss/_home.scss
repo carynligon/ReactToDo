@@ -1,0 +1,53 @@
+#goto-newlist {
+  display: block;
+  width: 80px;
+  text-align: center;
+  padding: 0.25rem 0;
+  color: $main;
+  margin: 3rem auto 1rem auto;
+  border: 1px solid rgba($black, 0.2);
+  box-shadow: 1px 2px 1px rgba($black, 0.2);
+  &:hover {
+    color: $black;
+  }
+}
+#list-list {
+  padding: 0;
+  margin: 0 auto;
+  width: 500px;
+  text-align: center;
+  border: 1px solid rgba($black, 0.2);
+  box-shadow: 1px 2px 1px rgba($black, 0.2);
+  li {
+    padding: 0.5rem 0;
+    list-style-type: none;
+    h3 {
+      margin: 0;
+    }
+    &:hover {
+      cursor: pointer;
+      background: $main;
+      color: #fff;
+    }
+  }
+}
+
+.new-list-form {
+  width: 500px;
+  margin: 5rem auto;
+  text-align: center;
+  input {
+    width: 60%;
+    padding: 5px;
+    margin-left: 1%;
+  }
+  button {
+    display: block;
+    width: 100px;
+    padding: 15px 0;
+    color: #fff;
+    margin: 1rem auto;
+    background: $main;
+    border: none;
+  }
+}

@@ -6,10 +6,9 @@ export default React.createClass({
     return (
       <nav>
         <Link to="/">Home</Link>
-        Today
-        Important
-        <Link to="/new-list">New</Link>
-        Logout
+        <a href="#">Today</a>
+        <a href="#">Important</a>
+        <a href="#">Logout</a>
       </nav>
     );
   }

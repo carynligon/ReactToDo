@@ -1,5 +1,5 @@
 import React from 'react';
-import {hashHistory} from 'react-router';
+import {hashHistory, Link} from 'react-router';
 
 import store from '../../store';
 
@@ -32,6 +32,7 @@ export default React.createClass({
     return (
       <main>
         <Nav/>
+        <Link to="/new-list" id="goto-newlist"><i className="fa fa-plus" aria-hidden="true"></i></Link>
         <ul id="list-list">
           {lists}
         </ul>
