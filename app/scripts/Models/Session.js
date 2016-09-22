@@ -29,7 +29,6 @@ const Session = Backbone.Model.extend({
     this.clear();
     localStorage.clear();
     hashHistory.push('/');
-    localStorage.setItem('authtoken', settings.anonymousToken);
   }
 })
 

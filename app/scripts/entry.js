@@ -26,6 +26,7 @@ store.session.save({
       username: 'caryn',
       password: '1234'
     });
+    console.log(data);
   }
 });
 
