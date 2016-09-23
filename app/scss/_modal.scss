@@ -1,0 +1,30 @@
+#modal-content {
+  padding-top: 2rem;
+  box-sizing: border-box;
+  form {
+    width: 60%;
+    margin: 0 auto;
+    input {
+      width: 100%;
+      font-size: 1rem;
+    }
+    label {
+      display: block;
+      text-align: left;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+    }
+    button {
+      display: block;
+      background: #fff;
+      color: $main;
+      width: 150px;
+      margin: 1rem auto;
+      border: none;
+      font-size: 1rem;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

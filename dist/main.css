@@ -113,6 +113,31 @@ aside {
       color: #000;
       cursor: pointer; }
 
+#modal-content {
+  padding-top: 2rem;
+  box-sizing: border-box; }
+  #modal-content form {
+    width: 60%;
+    margin: 0 auto; }
+    #modal-content form input {
+      width: 100%;
+      font-size: 1rem; }
+    #modal-content form label {
+      display: block;
+      text-align: left;
+      margin-top: 1rem;
+      font-size: 0.8rem; }
+    #modal-content form button {
+      display: block;
+      background: #fff;
+      color: #168bbd;
+      width: 150px;
+      margin: 1rem auto;
+      border: none;
+      font-size: 1rem; }
+      #modal-content form button:hover {
+        cursor: pointer; }
+
 body {
   margin: 0; }
 

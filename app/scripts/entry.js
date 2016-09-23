@@ -16,18 +16,20 @@ $(document).ajaxSend(function(evt, xhrAjax, jqueryAjax) {
   }
 });
 
-store.session.save({
-  username: 'caryn',
-  password: '1234'
-}, {
-  success: function(data) {
-    localStorage.setItem('authtoken', data.get('authtoken'));
-    store.session.set({
-      username: 'caryn',
-      password: '1234'
-    });
-    console.log(data);
-  }
-});
+store.session.retrieve();
+
+// store.session.save({
+//   username: 'caryn',
+//   password: '1234'
+// }, {
+//   success: function(data) {
+//     localStorage.setItem('authtoken', data.get('authtoken'));
+//     store.session.set({
+//       username: 'caryn',
+//       password: '1234'
+//     });
+//     console.log(data);
+//   }
+// });
 
 ReactDOM.render(router, document.getElementById('container'));

@@ -22,6 +22,9 @@ export default React.createClass({
   showLogin() {
     this.setState({showLogin: !this.state.showLogin});
   },
+  hideLogin() {
+    this.setState({showLogin: false})
+  },
   componentDidMount() {
     store.session.on('change', this.setSession)
   },
@@ -41,7 +44,7 @@ export default React.createClass({
       loginBtns = (<p onClick={this.showLogin}>Login</p>);
     }
     if (this.state.showLogin) {
-      modal = <LoginModal/>
+      modal = <LoginModal hideModal={this.hideLogin}/>
     }
     return (
       <aside>
