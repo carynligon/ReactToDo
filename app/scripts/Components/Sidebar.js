@@ -2,13 +2,14 @@ import React from 'react';
 import {Link} from 'react-router';
 
 import store from '../store';
+import LoginModal from './LoginModal';
 
 export default React.createClass({
   getInitialState() {
     if (store.session.get('userId')) {
-      return {loggedIn: true};
+      return {loggedIn: true, showLogin: false};
     } else {
-      return {loggedIn: false};
+      return {loggedIn: false, showLogin: false};
     }
   },
   setSession() {
@@ -17,6 +18,9 @@ export default React.createClass({
     } else {
       this.setState({loggedIn: false});
     }
+  },
+  showLogin() {
+    this.setState({showLogin: !this.state.showLogin});
   },
   componentDidMount() {
     store.session.on('change', this.setSession)
@@ -30,10 +34,14 @@ export default React.createClass({
   },
   render() {
     let loginBtns;
+    let modal;
     if (this.state.loggedIn) {
       loginBtns = (<p onClick={this.logout}>Logout</p>);
     } else {
-      loginBtns = (<p>Login</p>);
+      loginBtns = (<p onClick={this.showLogin}>Login</p>);
+    }
+    if (this.state.showLogin) {
+      modal = <LoginModal/>
     }
     return (
       <aside>
@@ -41,6 +49,7 @@ export default React.createClass({
         <a href="#">Today</a>
         <a href="#">Important</a>
         {loginBtns}
+        {modal}
       </aside>
     );
   }
