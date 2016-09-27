@@ -4,23 +4,14 @@ import store from '../store';
 
 export default React.createClass({
   login(e) {
-    e.preventDefault();
-    let username = this.refs.username.value;
-    let password = this.refs.password.value;
-    store.session.save({username, password},{
-      success: (data) => {
-        console.log(data);
-        localStorage.setItem('authtoken', data.get('authtoken'));
-        this.props.hideModal();
-      }
-    })
+    this.props.showLogin();
   },
-  signup() {
-    this.props.showSignup()
+  signup(e) {
+    store.session.signup(this.refs.username.value, this.refs.password.value);
   },
   render() {
     return (
-      <form className="login-form" onSubmit={this.login}>
+      <form className="login-form" onSubmit={this.signup}>
       <h2>Login</h2>
       <label htmlFor="username">username</label>
       <input type="text" name="username" id="username" ref="username"/>

@@ -4,6 +4,24 @@
   form {
     width: 60%;
     margin: 0 auto;
+    .signup-btn-wrapper {
+      width: 190px;
+      margin: 0 auto;
+      p {
+        display: inline-block;
+        &:hover {
+          color: #fff;
+        }
+      }
+      span {
+        color: $black;
+        font-weight: bolder;
+        font-size: 1rem;
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
     input {
       width: 100%;
       font-size: 1rem;

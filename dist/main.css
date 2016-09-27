@@ -134,6 +134,19 @@ aside {
   #modal-content form {
     width: 60%;
     margin: 0 auto; }
+    #modal-content form .signup-btn-wrapper {
+      width: 190px;
+      margin: 0 auto; }
+      #modal-content form .signup-btn-wrapper p {
+        display: inline-block; }
+        #modal-content form .signup-btn-wrapper p:hover {
+          color: #fff; }
+      #modal-content form .signup-btn-wrapper span {
+        color: #000;
+        font-weight: bolder;
+        font-size: 1rem; }
+        #modal-content form .signup-btn-wrapper span:hover {
+          color: #fff; }
     #modal-content form input {
       width: 100%;
       font-size: 1rem; }
