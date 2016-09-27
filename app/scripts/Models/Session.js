@@ -2,6 +2,7 @@ import Backbone from 'backbone';
 import {hashHistory} from 'react-router';
 
 import settings from '../settings';
+import store from '../store';
 
 const Session = Backbone.Model.extend({
   urlRoot: `https://baas.kinvey.com/user/${settings.appKey}/login`,
@@ -35,10 +36,7 @@ const Session = Backbone.Model.extend({
     localStorage.clear();
     store.users.create({
       username: username,
-      password: password,
-      email: email,
-      firstName: firstName,
-      lastName: lastName
+      password: password
     }, {
       success: function(response) {
         window.localStorage.setItem('authtoken', response.get('_kmd').authtoken);
@@ -46,8 +44,7 @@ const Session = Backbone.Model.extend({
         window.localStorage.setItem('ofAge', true);
         response.unset('password');
         store.session.set({
-          username: username,
-          authtoken: response.get('_kmd').authtoken
+          username: username
         });
         resolve(response);
       },

@@ -29,6 +29,7 @@ export default React.createClass({
     this.setState({show: 'login'});
   },
   render() {
+    console.log(this.state);
     let form;
     if (this.state.show === 'login') {
       form = <LoginForm hideModal={this.props.hideModal} showSignup={this.signup}/>
