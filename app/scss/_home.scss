@@ -26,7 +26,7 @@
     }
     &:hover {
       cursor: pointer;
-      background: $main;
+      background: linear-gradient(to right, rgba($main, 1), rgba($main, 0.5));
       color: #fff;
     }
   }

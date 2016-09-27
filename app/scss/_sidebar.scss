@@ -15,7 +15,7 @@ aside {
 }
 
 .show {
-  background: $main;
+  background: linear-gradient(to bottom, rgba($main, 0.5), rgba($main, 1));
   width: 300px;
   position: absolute;
   right: 0;

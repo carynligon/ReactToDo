@@ -6,6 +6,26 @@ h2 {
   width: 500px;
   margin: 0 auto;
   text-align: center;
+  label {
+    margin-right: 1%;
+  }
+  input {
+    line-height: 1rem;
+    padding-left: 1%;
+  }
+  button {
+    background: $main;
+    color: #fff;
+    margin-left: 1%;
+    border: 1px solid $main;
+    box-sizing: border-box;
+    line-height: 1rem;
+    &:hover {
+      cursor: pointer;
+      background: #fff;
+      color: $main;
+    }
+  }
 }
 
 #task-list {
@@ -14,12 +34,8 @@ h2 {
   padding: 0;
   border: 1px solid rgba($black, 0.2);
   box-shadow: 1px 2px 1px rgba($black, 0.2);
-  input {
-    width: 60%;
-    padding: 5px 0;
-  }
   li {
-    padding: 0.5rem 0;
+    padding: 0.5rem;
     list-style-type: none;
     p {
       margin: 0;

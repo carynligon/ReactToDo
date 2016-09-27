@@ -1,5 +1,5 @@
 nav {
-  background: #168bbd;
+  background: linear-gradient(to right, #168bbd, rgba(22, 139, 189, 0.5));
   color: #fff;
   height: 3rem;
   padding-left: 1%; }
@@ -47,7 +47,7 @@ nav {
       margin: 0; }
     #list-list li:hover {
       cursor: pointer;
-      background: #168bbd;
+      background: linear-gradient(to right, #168bbd, rgba(22, 139, 189, 0.5));
       color: #fff; }
 
 .new-list-form {
@@ -80,6 +80,22 @@ h2 {
   width: 500px;
   margin: 0 auto;
   text-align: center; }
+  .new-task-form label {
+    margin-right: 1%; }
+  .new-task-form input {
+    line-height: 1rem;
+    padding-left: 1%; }
+  .new-task-form button {
+    background: #168bbd;
+    color: #fff;
+    margin-left: 1%;
+    border: 1px solid #168bbd;
+    box-sizing: border-box;
+    line-height: 1rem; }
+    .new-task-form button:hover {
+      cursor: pointer;
+      background: #fff;
+      color: #168bbd; }
 
 #task-list {
   width: 700px;
@@ -87,11 +103,8 @@ h2 {
   padding: 0;
   border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.2); }
-  #task-list input {
-    width: 60%;
-    padding: 5px 0; }
   #task-list li {
-    padding: 0.5rem 0;
+    padding: 0.5rem;
     list-style-type: none; }
     #task-list li p {
       margin: 0; }
@@ -110,7 +123,7 @@ aside {
       cursor: pointer; }
 
 .show {
-  background: #168bbd;
+  background: linear-gradient(to bottom, rgba(22, 139, 189, 0.5), #168bbd);
   width: 300px;
   position: absolute;
   right: 0;
