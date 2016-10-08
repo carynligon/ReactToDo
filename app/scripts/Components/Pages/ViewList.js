@@ -4,11 +4,12 @@ import React from 'react';
 import store from '../../store';
 
 import Nav from '../Nav';
+import DatePicker from '../DatePicker';
 
 
 export default React.createClass({
   getInitialState() {
-    return {}
+    return {showOptions: false};
   },
   createTask(e) {
     e.preventDefault();
@@ -20,6 +21,9 @@ export default React.createClass({
   updateTasks() {
     let tasks = _.where(store.tasksCollection.toJSON(), {listId: this.props.params.id});
     this.setState({tasks: tasks})
+  },
+  showOptions() {
+    this.setState({showOptions: !this.state.showOptions});
   },
   componentDidMount() {
     store.listsCollection.on('update', this.getList);
@@ -35,6 +39,14 @@ export default React.createClass({
     console.log(this.state);
     let name;
     let tasks;
+    let form = (
+      <form className="new-task-form" onSubmit={this.createTask}>
+        <label htmlFor="task">Task</label>
+        <input type="text" id="task" name="task" placeholder="Get haircut" ref="task"/>
+        <button type="submit">+</button>
+        <button id="more-options" onClick={this.showOptions}><i className="fa fa-bars" aria-hidden="true"></i></button>
+      </form>
+    );
     if (this.state.list) {
       name = this.state.list.name
     }
@@ -43,15 +55,29 @@ export default React.createClass({
         return (<li key={i} id={task._id}><p>{task.task}</p></li>);
       });
     }
+    if (this.state.showOptions) {
+      form = (
+        <form className="new-task-form" onSubmit={this.createTask}>
+          <label htmlFor="task">Task</label>
+          <input type="text" id="task" name="task" placeholder="Get haircut" ref="task"/>
+          <label htmlFor="task">Due</label>
+          <DatePicker date={momentPropTypes.momentObj}/>
+          <label htmlFor="task">Priority</label>
+          <select ref="priority">
+            <option value="low">low</option>
+            <option value="normal">normal</option>
+            <option value="high">!high!</option>
+          </select>
+          <button type="submit">+</button>
+          <button id="more-options" onClick={this.showOptions}><i className="fa fa-bars" aria-hidden="true"></i></button>
+        </form>
+      )
+    }
     return (
       <main>
         <Nav/>
         <h2>{name}</h2>
-        <form className="new-task-form" onSubmit={this.createTask}>
-          <label htmlFor="task">Task</label>
-          <input type="text" id="task" name="task" placeholder="Get haircut" ref="task"/>
-          <button type="submit">+</button>
-        </form>
+        {form}
         <ul id="task-list">
           {tasks}
         </ul>
