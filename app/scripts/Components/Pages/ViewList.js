@@ -60,7 +60,10 @@ export default React.createClass({
         return (
           <li key={i}>
             <p>{task.task}</p>
-            <input type="checkbox" checked={task.completed} id={task._id} onChange={this.completeTask}/>
+            <div className="checkbox-wrapper" role="checkbox" aria-checked={task.completed}>
+              <div className="checkbox-box" aria-checked={task.completed} id={task._id} onClick={this.completeTask}>
+              </div>
+            </div>
           </li>
         );
       });

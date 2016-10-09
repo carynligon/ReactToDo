@@ -107,7 +107,28 @@ h2 {
     padding: 0.5rem;
     list-style-type: none; }
     #task-list li p {
-      margin: 0; }
+      margin: 0;
+      display: inline-block; }
+    #task-list li .checkbox-wrapper {
+      height: 1rem;
+      width: 1rem;
+      float: right;
+      border: 3px solid #168bbd;
+      box-sizing: border-box; }
+      #task-list li .checkbox-wrapper:hover {
+        cursor: pointer; }
+      #task-list li .checkbox-wrapper .checkbox-box[aria-checked=true] {
+        height: .8rem;
+        width: .8rem;
+        background: #168bbd; }
+        #task-list li .checkbox-wrapper .checkbox-box[aria-checked=true]:hover {
+          background: none; }
+      #task-list li .checkbox-wrapper .checkbox-box[aria-checked=false] {
+        height: .8rem;
+        width: .8rem;
+        background: none; }
+        #task-list li .checkbox-wrapper .checkbox-box[aria-checked=false]:hover {
+          background: #168bbd; }
 
 aside {
   width: 0; }
