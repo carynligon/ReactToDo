@@ -229,6 +229,16 @@ aside {
     .chart-wrapper .completed-path:hover, .chart-wrapper .notcompleted-path:hover {
       opacity: 0.8;
       transform: scale(1.05); }
+    .chart-wrapper .completed-path:hover ~ .completed-text, .chart-wrapper .notcompleted-path:hover ~ .completed-text {
+      fill: #fff; }
+    .chart-wrapper .completed-path:hover ~ .notcompleted-text, .chart-wrapper .notcompleted-path:hover ~ .notcompleted-text {
+      fill: #fff; }
+  .chart-wrapper .completed-text {
+    fill: #08415C;
+    transition: all 0.6s; }
+  .chart-wrapper .notcompleted-text {
+    fill: #168bbd;
+    transition: all 0.6s; }
 
 body {
   margin: 0; }

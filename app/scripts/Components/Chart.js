@@ -1,5 +1,6 @@
 import _ from 'underscore';
 import React from 'react';
+import {hashHistory} from 'react-router';
 import Faux from 'react-faux-dom/lib/ReactFauxDOM';
 var d3 = require('d3');
 
@@ -10,6 +11,12 @@ export default React.createClass({
   getInitialState() {
     console.log(d3);
     return {data: []}
+  },
+  gotoCompleted() {
+    hashHistory.push('/completed');
+  },
+  gotoNotCompleted() {
+    hashHistory.push('/notcompleted');
   },
   getTasks() {
     let tasks = store.tasksCollection.toJSON();
@@ -45,12 +52,27 @@ export default React.createClass({
 
     arcs.append('path')
         .attr('d', arc)
+        .on('click', (d) => {
+          if (d.index === 0) {
+            return this.gotoCompleted();
+          } else {return this.gotoNotCompleted();}
+        })
         .attr('fill', function(d) {return color(d.data)})
         .attr('class', function(d) {
           if (d.index === 0) {
             return "completed-path"
           } else {return "notcompleted-path"}
         });
+
+    arcs.append('text')
+        .attr('transform', function(d) {return 'translate(' + arc.centroid(d) + ')'})
+        .attr('text-anchor', 'middle')
+        .attr('class', function(d) {
+          if (d.index === 0) {
+            return "completed-text"
+          } else {return "notcompleted-text"}
+        })
+        .text(function(d) {return (d.data + ' tasks');})
   },
   componentDidMount() {
     store.tasksCollection.on('update', this.getTasks);
@@ -60,7 +82,6 @@ export default React.createClass({
     store.tasksCollection.off('update', this.getTasks);
   },
   render() {
-    console.log(this.state);
     return <div className="chart-wrapper">
       <h3>Completed vs. Not Completed Tasks</h3>
       {this.state.chart}
