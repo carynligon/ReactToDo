@@ -202,9 +202,33 @@ aside {
 
 .chart-wrapper {
   width: 500px;
-  margin: 0 auto; }
+  margin: 0 auto 5rem auto; }
   .chart-wrapper h3 {
     text-align: center; }
+  .chart-wrapper .chart-key {
+    width: 150px;
+    margin: 0 auto; }
+    .chart-wrapper .chart-key .completed-key {
+      width: 1.5rem;
+      height: 1.5rem;
+      background: #08415C; }
+    .chart-wrapper .chart-key .notcompleted-key {
+      width: 1.5rem;
+      height: 1.5rem;
+      background: #168bbd; }
+    .chart-wrapper .chart-key p {
+      width: 120px;
+      line-height: 1.5rem;
+      position: relative;
+      left: 35px;
+      margin: 0.5rem 0;
+      text-align: center;
+      background: #e3e3e3; }
+  .chart-wrapper .completed-path, .chart-wrapper .notcompleted-path {
+    transition: all 0.6s; }
+    .chart-wrapper .completed-path:hover, .chart-wrapper .notcompleted-path:hover {
+      opacity: 0.8;
+      transform: scale(1.05); }
 
 body {
   margin: 0; }

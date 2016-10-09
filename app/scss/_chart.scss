@@ -1,7 +1,37 @@
 .chart-wrapper {
   width: 500px;
-  margin: 0 auto;
+  margin: 0 auto 5rem auto;
   h3 {
     text-align: center;
+  }
+  .chart-key {
+    width: 150px;
+    margin: 0 auto;
+    .completed-key {
+      width: 1.5rem;
+      height: 1.5rem;
+      background: #08415C;
+    }
+    .notcompleted-key {
+      width: 1.5rem;
+      height: 1.5rem;
+      background: $main;
+    }
+    p {
+      width: 120px;
+      line-height: 1.5rem;
+      position: relative;
+      left: 35px;
+      margin: 0.5rem 0;
+      text-align: center;
+      background: $gray;
+    }
+  }
+  .completed-path, .notcompleted-path {
+    transition: all 0.6s;
+    &:hover {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
   }
 }

@@ -8,6 +8,7 @@ import store from '../store';
 export default React.createClass({
   mixins: [Faux.mixins.core, Faux.mixins.anim],
   getInitialState() {
+    console.log(d3);
     return {data: []}
   },
   getTasks() {
@@ -44,7 +45,12 @@ export default React.createClass({
 
     arcs.append('path')
         .attr('d', arc)
-        .attr('fill', function(d) {console.log(d);return color(d.data)});
+        .attr('fill', function(d) {return color(d.data)})
+        .attr('class', function(d) {
+          if (d.index === 0) {
+            return "completed-path"
+          } else {return "notcompleted-path"}
+        });
   },
   componentDidMount() {
     store.tasksCollection.on('update', this.getTasks);
@@ -56,8 +62,12 @@ export default React.createClass({
   render() {
     console.log(this.state);
     return <div className="chart-wrapper">
-      <h3>Completed vs. Not Completed Taskss</h3>
+      <h3>Completed vs. Not Completed Tasks</h3>
       {this.state.chart}
+      <div className="chart-key">
+        <div className="completed-key"><p>Completed Tasks</p></div>
+        <div className="notcompleted-key"><p>Incomplete Tasks</p></div>
+      </div>
     </div>
   }
 });
