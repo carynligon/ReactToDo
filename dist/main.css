@@ -200,6 +200,12 @@ aside {
       #modal-content form button:hover {
         cursor: pointer; }
 
+.chart-wrapper {
+  width: 500px;
+  margin: 0 auto; }
+  .chart-wrapper h3 {
+    text-align: center; }
+
 body {
   margin: 0; }
 

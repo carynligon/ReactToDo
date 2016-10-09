@@ -4,6 +4,7 @@ import {hashHistory, Link} from 'react-router';
 import store from '../../store';
 
 import Nav from '../Nav';
+import Chart from '../Chart';
 
 export default React.createClass({
   getInitialState() {
@@ -36,6 +37,7 @@ export default React.createClass({
         <ul id="list-list">
           {lists}
         </ul>
+        <Chart/>
       </main>
     );
   }
