@@ -15,11 +15,16 @@ export default Backbone.Collection.extend({
         _id: listId,
         _collection: 'Lists'
       },
-      listId: listId
+      listId: listId,
+      completed: false
     }, {
       success: (data) => {
         console.log(data);
       }
     });
+  },
+  completeTask: function(taskId) {
+    let task = this.get(taskId);
+    task.save({completed: !task.get('completed')})
   }
 });

@@ -25,9 +25,14 @@ export default React.createClass({
   showOptions() {
     this.setState({showOptions: !this.state.showOptions});
   },
+  completeTask(e) {
+    let taskId = e.target.id;
+    store.tasksCollection.completeTask(taskId);
+  },
   componentDidMount() {
+    console.dir(document.querySelectorAll('#task-list li'));
     store.listsCollection.on('update', this.getList);
-    store.tasksCollection.on('update', this.updateTasks);
+    store.tasksCollection.on('update change', this.updateTasks);
     store.listsCollection.fetch();
     store.tasksCollection.fetch();
   },
@@ -52,7 +57,12 @@ export default React.createClass({
     }
     if (this.state.tasks) {
       tasks = this.state.tasks.map((task,i) => {
-        return (<li key={i} id={task._id}><p>{task.task}</p></li>);
+        return (
+          <li key={i}>
+            <p>{task.task}</p>
+            <input type="checkbox" checked={task.completed} id={task._id} onChange={this.completeTask}/>
+          </li>
+        );
       });
     }
     if (this.state.showOptions) {
