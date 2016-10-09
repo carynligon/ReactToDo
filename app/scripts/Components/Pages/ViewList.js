@@ -29,7 +29,6 @@ export default React.createClass({
     store.tasksCollection.completeTask(taskId);
   },
   componentDidMount() {
-    console.dir(document.querySelectorAll('#task-list li'));
     store.listsCollection.on('update', this.getList);
     store.tasksCollection.on('update change', this.updateTasks);
     store.listsCollection.fetch();
@@ -40,7 +39,6 @@ export default React.createClass({
     store.tasksCollection.off('update change', this.updateTasks);
   },
   render() {
-    console.log(this.state);
     let name;
     let tasks;
     let form = (

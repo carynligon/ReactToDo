@@ -1,20 +1,20 @@
+import _ from 'underscore';
 import React from 'react';
 import Faux from 'react-faux-dom/lib/ReactFauxDOM';
 var d3 = require('d3');
 
+import store from '../store';
+
 export default React.createClass({
   mixins: [Faux.mixins.core, Faux.mixins.anim],
-  getInitialState: function () {
-    console.log(d3);
-    return {data: [14,74]}
+  getInitialState() {
+    return {data: []}
   },
-  render: function () {
-    return <div className="chart-wrapper">
-      <h3>Completed vs. Not Completed Taskss</h3>
-      {this.state.chart}
-    </div>
-  },
-  componentDidMount: function () {
+  getTasks() {
+    let tasks = store.tasksCollection.toJSON();
+    let completed = _.where(tasks, {completed: true});
+    let notCompleted = _.where(tasks, {completed: false});
+    this.setState({data: [completed.length, notCompleted.length]})
     let faux = this.connectFauxDOM('div', 'chart');
     let r = 200;
 
@@ -45,7 +45,19 @@ export default React.createClass({
     arcs.append('path')
         .attr('d', arc)
         .attr('fill', function(d) {console.log(d);return color(d.data)});
-
-
+  },
+  componentDidMount() {
+    store.tasksCollection.on('update', this.getTasks);
+    store.tasksCollection.fetch();
+  },
+  componentWillUnmount() {
+    store.tasksCollection.off('update', this.getTasks);
+  },
+  render() {
+    console.log(this.state);
+    return <div className="chart-wrapper">
+      <h3>Completed vs. Not Completed Taskss</h3>
+      {this.state.chart}
+    </div>
   }
 });

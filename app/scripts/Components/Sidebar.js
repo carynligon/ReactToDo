@@ -28,14 +28,12 @@ export default React.createClass({
   componentDidMount() {
     store.session.on('change', this.setSession)
     document.querySelector('aside').classList.add('show');
-    console.log(document.querySelector('aside'));
   },
   componentWillUnmount() {
     store.session.off('change', this.setSession)
   },
   logout() {
     store.session.logout()
-    console.log(store.session);
   },
   render() {
     let loginBtns;
