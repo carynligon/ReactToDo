@@ -7,7 +7,7 @@ import settings from '../settings';
 export default Backbone.Collection.extend({
   url: `https://baas.kinvey.com/appdata/${settings.appKey}/Tasks`,
   model: Task,
-  newTask: function(task, listId) {
+  newTask: function(task, date, priority, listId) {
     this.create({
       task: task,
       list: {
@@ -16,6 +16,8 @@ export default Backbone.Collection.extend({
         _collection: 'Lists'
       },
       listId: listId,
+      due: date,
+      priority: priority,
       completed: false
     }, {
       success: (data) => {

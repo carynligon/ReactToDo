@@ -19,7 +19,7 @@ export default React.createClass({
     let r = 200;
 
     let color = d3.scaleOrdinal()
-        .range(['#08415C', '#CC2936'])
+        .range(['#08415C', '#168BBD'])
 
     let svg = d3.select(faux).append('svg')
         .attr('class', 'water-bar')

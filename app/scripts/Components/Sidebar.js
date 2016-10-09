@@ -51,7 +51,7 @@ export default React.createClass({
     return (
       <aside>
         <Link to="/">Home</Link>
-        <a href="#">Today</a>
+        <Link to="/today">Today</Link>
         <a href="#">Important</a>
         {loginBtns}
         {modal}
