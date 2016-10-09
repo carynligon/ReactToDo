@@ -33,11 +33,15 @@ export default React.createClass({
     return (
       <main>
         <Nav/>
-        <Link to="/new-list" id="goto-newlist"><i className="fa fa-plus" aria-hidden="true"></i></Link>
-        <ul id="list-list">
-          {lists}
-        </ul>
+          <div className="home-page-wrapper">
+            <div className="home-list-wrapper">
+            <Link to="/new-list" id="goto-newlist"><i className="fa fa-plus" aria-hidden="true"></i></Link>
+            <ul id="list-list">
+              {lists}
+            </ul>
+          </div>
         <Chart/>
+        </div>
       </main>
     );
   }

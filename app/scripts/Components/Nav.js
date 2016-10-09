@@ -8,11 +8,16 @@ export default React.createClass({
   },
   showSidebar() {
     this.setState({showSidebar: !this.state.showSidebar})
+    if (document.querySelector('.home-page-wrapper').style.transform = 'translateX(-290px)') {
+      document.querySelector('.home-page-wrapper').style.transform = '';
+    }
   },
   render() {
     let sidebar;
     if (this.state.showSidebar) {
       sidebar = <Sidebar/>
+      console.dir(document.querySelector('main'));
+      document.querySelector('.home-page-wrapper').style.transform = 'translateX(-290px)';
     }
     return (
       <nav>

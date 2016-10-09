@@ -1,60 +1,74 @@
-#goto-newlist {
-  display: block;
-  width: 80px;
-  text-align: center;
-  padding: 0.25rem 0;
-  color: $main;
-  margin: 3rem auto 1rem auto;
-  border: 1px solid rgba($black, 0.2);
-  box-shadow: 1px 2px 1px rgba($black, 0.2);
-  &:hover {
-    color: $black;
-  }
-}
-#list-list {
-  padding: 0;
-  margin: 0 auto;
-  width: 500px;
-  text-align: center;
-  border: 1px solid rgba($black, 0.2);
-  box-shadow: 1px 2px 1px rgba($black, 0.2);
-  li {
-    padding: 0.5rem 0;
-    list-style-type: none;
-    h3 {
-      margin: 0;
-    }
-    &:hover {
-      cursor: pointer;
-      background: linear-gradient(to right, rgba($main, 1), rgba($main, 0.5));
-      color: #fff;
-    }
-  }
-}
-
-.new-list-form {
-  width: 500px;
-  margin: 5rem auto;
-  text-align: center;
-  input {
-    width: 60%;
-    padding: 5px;
-    margin-left: 1%;
-  }
-  button {
+.home-page-wrapper {
+  width: 960px;
+  margin: 3rem auto;
+  transition: transform .6s;
+  &::after {
+    content: '';
     display: block;
-    width: 100px;
-    padding: 15px 0;
-    color: #fff;
-    margin: 1rem auto;
-    background: $main;
-    border: none;
-    &:hover {
-      cursor: pointer;
-      background: none;
+    clear: both;
+  }
+  .home-list-wrapper {
+    display: inline-block;
+    float: left;
+    #goto-newlist {
+      display: block;
+      width: 80px;
+      text-align: center;
+      padding: 0.25rem 0;
       color: $main;
-      border: 2px solid $main;
-      box-sizing: border-box;
+      margin: 3rem auto 1rem auto;
+      border: 1px solid rgba($black, 0.2);
+      box-shadow: 1px 2px 1px rgba($black, 0.2);
+      &:hover {
+        color: $black;
+      }
+    }
+    #list-list {
+      padding: 0;
+      margin: 0 auto;
+      width: 500px;
+      text-align: center;
+      border: 1px solid rgba($black, 0.2);
+      box-shadow: 1px 2px 1px rgba($black, 0.2);
+      li {
+        padding: 0.5rem 0;
+        list-style-type: none;
+        h3 {
+          margin: 0;
+        }
+        &:hover {
+          cursor: pointer;
+          background: linear-gradient(to right, rgba($main, 1), rgba($main, 0.5));
+          color: #fff;
+        }
+      }
+    }
+
+    .new-list-form {
+      width: 500px;
+      margin: 5rem auto;
+      text-align: center;
+      input {
+        width: 60%;
+        padding: 5px;
+        margin-left: 1%;
+      }
+      button {
+        display: block;
+        width: 100px;
+        padding: 15px 0;
+        color: #fff;
+        margin: 1rem auto;
+        background: $main;
+        border: none;
+        &:hover {
+          cursor: pointer;
+          background: none;
+          color: $main;
+          border: 2px solid $main;
+          box-sizing: border-box;
+        }
+      }
     }
   }
 }
