@@ -18,8 +18,8 @@ export default React.createClass({
     this.setState({list: store.listsCollection.get(this.props.params.id).toJSON()})
   },
   updateTasks() {
-    let tasks = _.where(store.tasksCollection.toJSON(), {listId: this.props.params.id});
-    this.setState({tasks: store.tasksCollection.toJSON()})
+    let tasks = _.where(store.todayTasks.toJSON(), {listId: this.props.params.id});
+    this.setState({tasks: store.todayTasks.toJSON()})
   },
   showOptions() {
     this.setState({showOptions: !this.state.showOptions});
@@ -29,27 +29,11 @@ export default React.createClass({
     store.tasksCollection.completeTask(taskId);
   },
   componentDidMount() {
-    let today = new Date();
-    let dd = today.getDate();
-    let mm = today.getMonth()+1;
-    let yyyy = today.getFullYear();
-    if(dd<10) {
-        dd='0'+dd
-    }
-    if(mm<10) {
-        mm='0'+mm
-    }
-    today = yyyy+'-'+mm+'-'+dd;
-    console.log(today);
-    store.tasksCollection.on('update change', this.updateTasks);
-    store.tasksCollection.fetch({
-      "data": {
-        "query": JSON.stringify({"due": today})
-      }
-    });
+    store.todayTasks.on('update', this.updateTasks);
+    store.todayTasks.getTasks();
   },
   componentWillUnmount() {
-    store.tasksCollection.off('update', this.updateTasks);
+    store.todayTasks.off('update', this.updateTasks);
   },
   render() {
     console.log(this.state);

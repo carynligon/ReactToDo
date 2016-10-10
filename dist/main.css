@@ -12,6 +12,8 @@ nav {
     nav a:hover {
       color: #168bbd;
       background: #fff; }
+    nav a:hover #today-task-alert {
+      color: #fff; }
   nav span {
     float: right;
     margin-right: 2%;
@@ -163,7 +165,7 @@ aside {
   height: 100%;
   z-index: 10;
   animation: slide 0.5s; }
-  .show #today-task-alert {
+  .show #today-task-alert, .show #important-task-alert {
     font-size: 0.8rem;
     position: relative;
     right: 115px;
@@ -172,6 +174,8 @@ aside {
     line-height: 0.8rem;
     padding: 0.2rem 0.3rem;
     border-radius: 50%; }
+  .show #important-task-alert {
+    right: 100px; }
 
 @keyframes slide {
   0% {

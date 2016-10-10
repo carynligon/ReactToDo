@@ -5,6 +5,7 @@ import App from './Components/Pages/App';
 import NewList from './Components/Pages/NewList';
 import ViewList from './Components/Pages/ViewList';
 import DueToday from './Components/Pages/Today';
+import Important from './Components/Pages/Important';
 import Completed from './Components/Pages/Completed';
 import NotCompleted from './Components/Pages/NotCompleted';
 
@@ -14,6 +15,7 @@ const router = (
     <Route path="/new-list" component={NewList}/>
     <Route path="/list/:id" component={ViewList}/>
     <Route path="/today" component={DueToday}/>
+    <Route path="/important" component={Important}/>
     <Route path="/completed" component={Completed}/>
     <Route path="/notcompleted" component={NotCompleted}/>
   </Router>

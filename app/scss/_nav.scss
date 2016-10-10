@@ -13,6 +13,9 @@ nav {
       color: $main;
       background: #fff;
     }
+    &:hover #today-task-alert {
+      color: #fff;
+    }
   }
   span {
     float: right;
