@@ -1,12 +1,11 @@
 nav {
-  background: linear-gradient(to right, rgba($main, 1), rgba($main, 0.5));
+  background: $main;
   color: #fff;
   height: 3rem;
   padding-left: 1%;
   a {
     color: #fff;
     text-decoration: none;
-    margin: 0 5px;
     display: block;
     text-align: center;
     line-height: 3rem;
