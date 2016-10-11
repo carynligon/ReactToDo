@@ -89,6 +89,18 @@ nav {
 h2 {
   text-align: center; }
 
+h5 {
+  text-align: center; }
+  h5::before, h5::after {
+    content: '';
+    position: relative;
+    bottom: 2.5px;
+    width: 150px;
+    height: 0;
+    margin: 0 3px;
+    display: inline-block;
+    border-top: 1px solid rgba(0, 0, 0, 0.2); }
+
 .new-task-form {
   width: 500px;
   margin: 0 auto;
@@ -110,37 +122,37 @@ h2 {
       background: #fff;
       color: #168bbd; }
 
-#task-list {
+#task-list, #completed-task-list {
   width: 700px;
   margin: 1rem auto 0 auto;
   padding: 0;
   border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.2); }
-  #task-list li {
+  #task-list li, #completed-task-list li {
     padding: 0.5rem;
     list-style-type: none; }
-    #task-list li p {
+    #task-list li p, #completed-task-list li p {
       margin: 0;
       display: inline-block; }
-    #task-list li .checkbox-wrapper {
+    #task-list li .checkbox-wrapper, #completed-task-list li .checkbox-wrapper {
       height: 1rem;
       width: 1rem;
       float: right;
       border: 3px solid #168bbd;
       box-sizing: border-box; }
-      #task-list li .checkbox-wrapper:hover {
+      #task-list li .checkbox-wrapper:hover, #completed-task-list li .checkbox-wrapper:hover {
         cursor: pointer; }
-      #task-list li .checkbox-wrapper .checkbox-box[aria-checked=true] {
+      #task-list li .checkbox-wrapper .checkbox-box[aria-checked=true], #completed-task-list li .checkbox-wrapper .checkbox-box[aria-checked=true] {
         height: .8rem;
         width: .8rem;
         background: #168bbd; }
-        #task-list li .checkbox-wrapper .checkbox-box[aria-checked=true]:hover {
+        #task-list li .checkbox-wrapper .checkbox-box[aria-checked=true]:hover, #completed-task-list li .checkbox-wrapper .checkbox-box[aria-checked=true]:hover {
           background: none; }
-      #task-list li .checkbox-wrapper .checkbox-box[aria-checked=false] {
+      #task-list li .checkbox-wrapper .checkbox-box[aria-checked=false], #completed-task-list li .checkbox-wrapper .checkbox-box[aria-checked=false] {
         height: .8rem;
         width: .8rem;
         background: none; }
-        #task-list li .checkbox-wrapper .checkbox-box[aria-checked=false]:hover {
+        #task-list li .checkbox-wrapper .checkbox-box[aria-checked=false]:hover, #completed-task-list li .checkbox-wrapper .checkbox-box[aria-checked=false]:hover {
           background: #168bbd; }
 
 aside {

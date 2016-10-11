@@ -7,7 +7,7 @@ export default Backbone.Collection.extend({
   getTasks: function() {
     this.fetch({
       "data": {
-        "query": JSON.stringify({"priority" : 'high'})
+        "query": JSON.stringify({"priority" : 'high', "completed": false})
       },
       success: (data) => {
         data.models.forEach((model) => {

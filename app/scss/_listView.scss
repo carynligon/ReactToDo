@@ -2,6 +2,20 @@ h2 {
   text-align: center;
 }
 
+h5 {
+  text-align: center;
+  &::before, &::after {
+    content: '';
+    position: relative;
+    bottom: 2.5px;
+    width: 150px;
+    height: 0;
+    margin: 0 3px;
+    display: inline-block;
+    border-top: 1px solid rgba($black, 0.2);
+  }
+}
+
 .new-task-form {
   width: 500px;
   margin: 0 auto;
@@ -28,7 +42,7 @@ h2 {
   }
 }
 
-#task-list {
+#task-list, #completed-task-list {
   width: 700px;
   margin: 1rem auto 0 auto;
   padding: 0;

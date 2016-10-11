@@ -25,7 +25,9 @@ export default React.createClass({
     this.setState({showOptions: !this.state.showOptions});
   },
   completeTask(e) {
+    console.log(e);
     let taskId = e.target.id;
+    console.log(taskId);
     store.tasksCollection.completeTask(taskId);
   },
   componentDidMount() {
@@ -41,6 +43,7 @@ export default React.createClass({
   render() {
     let name;
     let tasks;
+    let completedTasks;
     let form = (
       <form className="new-task-form" onSubmit={this.createTask}>
         <label htmlFor="task">Task</label>
@@ -54,15 +57,32 @@ export default React.createClass({
     }
     if (this.state.tasks) {
       tasks = this.state.tasks.map((task,i) => {
-        return (
-          <li key={i}>
-            <p>{task.task}</p>
-            <div className="checkbox-wrapper" role="checkbox" aria-checked={task.completed}>
-              <div className="checkbox-box" aria-checked={task.completed} id={task._id} onClick={this.completeTask}>
+        console.log(task);
+        if (!task.completed) {
+          return (
+            <li key={i}>
+              <p>{task.task}</p>
+              <div className="checkbox-wrapper" role="checkbox" aria-checked={task.completed}>
+                <div className="checkbox-box" aria-checked={task.completed} id={task._id} onClick={this.completeTask}>
+                </div>
               </div>
-            </div>
-          </li>
-        );
+            </li>
+          );
+        }
+      });
+      completedTasks = this.state.tasks.map((task,i) => {
+        console.log(task);
+        if (task.completed) {
+          return (
+            <li key={i}>
+              <p>{task.task}</p>
+              <div className="checkbox-wrapper" role="checkbox" aria-checked={task.completed}>
+                <div className="checkbox-box" aria-checked={task.completed} id={task._id} onClick={this.completeTask}>
+                </div>
+              </div>
+            </li>
+          );
+        }
       });
     }
     if (this.state.showOptions) {
@@ -90,6 +110,10 @@ export default React.createClass({
         {form}
         <ul id="task-list">
           {tasks}
+        </ul>
+        <h5>Completed Tasks</h5>
+        <ul id="completed-task-list">
+          {completedTasks}
         </ul>
       </main>
     );

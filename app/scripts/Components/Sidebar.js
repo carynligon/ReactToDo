@@ -54,9 +54,9 @@ export default React.createClass({
     let todayTasks;
     let importantTasks;
     if (this.state.loggedIn) {
-      loginBtns = (<p onClick={this.logout}>Logout</p>);
+      loginBtns = (<a href="" onClick={this.logout}>Logout</a>);
     } else {
-      loginBtns = (<p onClick={this.showLogin}>Login</p>);
+      loginBtns = (<a href="" onClick={this.showLogin}>Login</a>);
     }
     if (this.state.showLogin) {
       modal = <LoginModal hideModal={this.hideLogin}/>

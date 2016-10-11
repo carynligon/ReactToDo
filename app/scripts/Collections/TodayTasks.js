@@ -19,7 +19,7 @@ export default Backbone.Collection.extend({
     today = yyyy+'-'+mm+'-'+dd;
     this.fetch({
       "data": {
-        "query": JSON.stringify({"due" : today})
+        "query": JSON.stringify({"due" : today, "completed": false})
       },
       success: (data) => {
         data.models.forEach((model) => {
