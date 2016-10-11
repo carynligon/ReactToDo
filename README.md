@@ -1,28 +1,20 @@
-# Basic Build with NPM scripts
-This is a project scaffolding and build tool for the TIY Austin Front-End Engineering course. Feel free to use and enjoy! Feedback and PRs welcome!
+# To-do list app built with React, Backbone, & a lil' D3
 
-## Features
-- A bare bones scaffolding for an SPA, without any libraries built in
-- A static server for serving up your dev environment via http
-- `app` directory for development, preloaded with an `index.html`, `scripts/entry.js`, `scss/main.scss` and `assets/`
-- `dist` directory for deployable code
-- es2015 and babel, including module syntax
-- mocha test runner, for support testing modules and react components with es2015 and jsx syntax using enzyme and the chai assertion library
-- sass (.scss)
+Features So far:
+ - User authentication
+ - Dynamically generated data visualization based on completed vs. incomplete tasks
+ - Sidebar flags for if tasks are due today or are marked as high priority
 
-## Installation
-- Clone this repo (or fork then clone, if you prefer)
-- Remove the git history by running `rm -rf .git`
-- Set up a new git repo
-- Run `npm install`
-- if you get permission errors you may need to run `sudo npm install` to install a couple global dependencies
 
-## Use
-- `npm install` will scaffold your project AND start the dev server
-- `npm start` will start the dev server and watch for changes
-- `npm test` will run any test files included in the test folder
-- `npm run deploy` will push the content of `dist/` to gh-pages
-- When the server is running, your site will be live on [http://localhost:8080/](http://localhost:8080/)
+ To do:
 
-## Dependencies
-- `sass` [install guide here](http://sass-lang.com/install)
+ - Add notes to tasks
+ - Share lists with other users
+ - Make responsive
+ - Data visualizations for productivity over time
+ - Customizable colors
+ - Push notification enablement for due dates
+ - Sorting Feature
+ - Search for specific tasks
+ - Assigning tasks (for shared lists)
+ 
